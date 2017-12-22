@@ -3,14 +3,20 @@
 .Button {
   height: 50px;
   width: 150px;
-  background: rgb(48, 73, 87);
   text-align: center;
   line-height: 50px;
   color: white;
+  background: #FF00E2;
+  border-radius: 4px;
+}
+
+.button--warning {
+  background: red;
 }
 
 .Button > a {
   text-decoration: none;
   color: inherit;
   font-family: 'Quicksand', sans-serif;
+  display: block;
 }
