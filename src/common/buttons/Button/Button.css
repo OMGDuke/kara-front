@@ -1,13 +1,14 @@
 @import url('https://fonts.googleapis.com/css?family=Quicksand:700');
 
 .Button {
-  height: 50px;
-  width: 150px;
+  height: 30px;
   text-align: center;
-  line-height: 50px;
+  line-height: 30px;
   color: white;
   background: black;
   border-radius: 4px;
+  display: inline-block;
+  padding: 0 10px 0 10px;
 }
 
 .button--success {
@@ -20,6 +21,18 @@
 
 .button--error {
   background: red;
+}
+
+.button--small {
+  height: 20px;
+  line-height: 20px;
+  font-size: 12px;
+}
+
+.button--large {
+  height: 50px;
+  line-height: 50px;
+  font-size: 20px;
 }
 
 .Button > a {

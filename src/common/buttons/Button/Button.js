@@ -14,7 +14,9 @@ class Button extends Component {
     return classNames({
       'button--warning': ( this.props.type === 'warning' ),
       'button--error': ( this.props.type === 'error' ),
-      'button--success': ( this.props.type === 'success' )
+      'button--success': ( this.props.type === 'success' ),
+      'button--small': ( this.props.size === 'small' ),
+      'button--large': ( this.props.size === 'large' )
     });
   }
 

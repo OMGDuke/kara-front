@@ -43,4 +43,17 @@ describe('Button', () => {
       expect(successClass).toEqual(true);
     });
   });
+
+  describe('sizes', () => {
+    it('should render a small button', () => {
+      const wrapper = shallow(<Button size={'small'}>Best button eu</Button>);
+      const smallClass = wrapper.find('.Button').hasClass('button--small');
+      expect(smallClass).toEqual(true);
+    });
+    it('should render a large button', () => {
+      const wrapper = shallow(<Button size={'large'}>Best button eu</Button>);
+      const largeClass = wrapper.find('.Button').hasClass('button--large');
+      expect(largeClass).toEqual(true);
+    });
+  });
 });
