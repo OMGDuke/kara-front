@@ -6,11 +6,19 @@
   text-align: center;
   line-height: 50px;
   color: white;
-  background: #FF00E2;
+  background: black;
   border-radius: 4px;
 }
 
+.button--success {
+  background: rgb(100, 208, 0);
+}
+
 .button--warning {
+  background: orange;
+}
+
+.button--error {
   background: red;
 }
 
