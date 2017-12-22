@@ -16,7 +16,7 @@ class Button extends Component {
   render() {
     return (
       <div className="Button">
-        <a href="#"onClick={this.handleClick}>{this.props.children}</a>
+        <a href="#" onClick={this.handleClick}>{this.props.children}</a>
       </div>
     );
   }
