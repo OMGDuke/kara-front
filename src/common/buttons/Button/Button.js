@@ -23,13 +23,13 @@ class Button extends Component {
   handleClick(e) {
     e.preventDefault();
     const action = this.props.action;
-    action ? this.props.action() : false;
+    return action ? this.props.action() : false;
   }
 
   render() {
     return (
       <div className={`Button ${this.classes}`}>
-        <a href="#" onClick={this.handleClick}>{this.props.children}</a>
+        <a title="hello" onClick={this.handleClick}>{this.props.children}</a>
       </div>
     );
   }
