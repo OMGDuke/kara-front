@@ -1,0 +1,9 @@
+.TextInput {
+  border: 1px solid grey;
+  border-radius: 4px;
+}
+
+.text-input--success {
+  background: rgb(207, 255, 220);
+  color: rgb(0, 124, 35);
+}
