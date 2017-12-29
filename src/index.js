@@ -1,8 +1,26 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from 'react-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './index.css';
-import App from './App';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import App from './App/App';
+import NotFound from './NotFound/NotFound';
 import registerServiceWorker from './registerServiceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const Root = () => {
+    return (
+        <Router>
+            <div>
+                <Switch>
+                    <Route exact path="/" component={App} />
+                    <Route component={NotFound} />
+                </Switch>
+            </div>
+        </Router>
+    )
+}
+
+render(<Root />, document.getElementById('root'));
 registerServiceWorker();
+
+
