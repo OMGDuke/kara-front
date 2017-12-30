@@ -1,26 +1,34 @@
 import React, { Component } from 'react';
+// import classnames from 'classnames';
 import './Search.css';
 
 class Search extends Component {
   constructor() {
     super();
+    this.state = {value: ''}
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange(e) {
+    this.setState({value: e.target.value});
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    console.log('Searching for:', this.input.value);
+    this.props.searchYT(this.state.value);
+  }
+
+  findClasses(value) {
+    this.classes = value ? 'has-error' : '';
   }
 
   render() {
     return (
       <div className="Search container">
         <form className="form-group" onSubmit={this.handleSubmit}>
-            <label className="control-label" htmlFor="search">Search</label>
-            <div className="input-group">
-                <input className="form-control" type="text" name="search" placeholder="Enter an artist or song..." ref={(input) => this.input = input} />
-                <span className="input-group-btn"><button className="btn btn-default btn-success">Search</button></span>
-            </div>                    
+                <input className="form-control" type="text" placeholder="Enter an artist or song..." value={this.state.value} onChange={this.handleChange}  />
+                <button className="btn btn-default btn-success btn-block">Search</button>                 
         </form> 
       </div>
     );  
