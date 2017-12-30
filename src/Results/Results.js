@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
+import Result from '../Result/Result';
+
 class Results extends Component {
   constructor(props) {
     super(props);
@@ -22,9 +24,13 @@ class Results extends Component {
 
   render() {
     return (
-      <div className="Results">
+      <div className="Results container">
         <h1>Results</h1>
-        
+        <div className="row">
+          {
+            this.state.results.map(result => <Result key={result.id.videoId} resultData={result} />)
+          }
+        </div>
       </div>
     );  
   }
