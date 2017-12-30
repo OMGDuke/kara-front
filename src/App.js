@@ -3,11 +3,15 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import Header from './common/Header/Header';
 import Search from './Search/Search';
+import Results from './Results/Results';
 import NotFound from './NotFound/NotFound';
 
 class App extends Component {
-    searchYT (term) {
-        console.log(term)
+    constructor() {
+        super();
+        this.state = {
+            results: []
+        }
     }
     
     render() {
@@ -18,7 +22,8 @@ class App extends Component {
                 <div>
 
                     <Switch>
-                        <Route exact path="/" render={(props) => <Search {...props} searchYT={this.searchYT} /> } />
+                        <Route exact path="/" component={Search} />
+                        <Route exact path="/results/:searchTerm" component={Results} />
                         <Route component={NotFound} />
                     </Switch>
                 </div>
@@ -29,3 +34,4 @@ class App extends Component {
 }
 
 export default App;
+// <Route exact path="/results/:searchTerm" render={(props) => <Results {...props} results={this.state} /> } />

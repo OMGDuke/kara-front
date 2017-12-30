@@ -16,7 +16,7 @@ class Search extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.searchYT(this.state.value);
+    this.props.history.push(`/results/${this.state.value}`)
   }
 
   findClasses(value) {
