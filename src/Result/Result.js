@@ -1,12 +1,19 @@
 import React, { Component } from 'react';
+import './Result.css';
 
 class Result extends Component {
   render() {
     const result = this.props.resultData;
     return (
       <div className="Result col-md-4">
-        <h3>{result.snippet.title}</h3>
-        <img className="img-fluid rounded" src={result.snippet.thumbnails.high.url} alt=""/>
+        <div className="card-wrapper h-100">
+          <div className="card">
+            <img className="card-img-top" src={result.snippet.thumbnails.high.url} alt=""/>
+            <div className="card-body">
+              <h5 className="card-title">{result.snippet.title}</h5>
+            </div>
+          </div>
+        </div>
       </div>
     );  
   }

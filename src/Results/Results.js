@@ -15,7 +15,7 @@ class Results extends Component {
   getResults() {
     const searchTerm = this.props.match.params.searchTerm;
     const API_KEY = process.env.REACT_APP_YOUTUBE_API;
-    const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&type=video&maxResults=50&q=${searchTerm}%20karaoke&key=${API_KEY}`;
+    const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&type=video&maxResults=10&q=${searchTerm}%20karaoke&key=${API_KEY}`;
     axios.get(url)
       .then(res => {
         this.setState({results: res.data.items});
