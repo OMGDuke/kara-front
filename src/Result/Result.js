@@ -10,7 +10,7 @@ class Result extends Component {
           <div className="card">
             <img className="card-img-top" src={result.snippet.thumbnails.high.url} alt=""/>
             <div className="card-body">
-              <h5 className="card-title">{result.snippet.title}</h5>
+              <a href={`/sing/${result.id.videoId}`}><h5 className="card-title">{result.snippet.title}</h5></a>
             </div>
           </div>
         </div>

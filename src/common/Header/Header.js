@@ -6,7 +6,7 @@ class Header extends Component {
       <div className="Header">
         <div className="jumbotron jumbotron-fluid">
             <div className="container">
-                <h1 className="display-4">{process.env.REACT_APP_WEBSITE_NAME}</h1>
+                <a href="/"><h1 className="display-4">{process.env.REACT_APP_WEBSITE_NAME}</h1></a>
                 <p className="lead">Witty Tagline</p>
             </div>
         </div>

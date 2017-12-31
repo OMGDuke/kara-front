@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Header from './common/Header/Header';
 import Search from './Search/Search';
 import Results from './Results/Results';
+import Sing from './Sing/Sing';
 import NotFound from './NotFound/NotFound';
 
 class App extends Component {
@@ -24,6 +25,7 @@ class App extends Component {
                     <Switch>
                         <Route exact path="/" component={Search} />
                         <Route exact path="/results/:searchTerm" component={Results} />
+                        <Route exact path="/sing/:videoId" component={Sing}/>
                         <Route component={NotFound} />
                     </Switch>
                 </div>
