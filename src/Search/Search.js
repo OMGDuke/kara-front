@@ -16,11 +16,7 @@ class Search extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.history.push(`/results/${this.state.value}`)
-  }
-
-  findClasses(value) {
-    this.classes = value ? 'has-error' : '';
+    this.props.history.push(`/search/${this.state.value}`)
   }
 
   render() {

@@ -13,17 +13,14 @@
   "dependencies": {
     "axios": "^0.17.1",
     "bootstrap": "4.0.0-beta.3",
-    "classnames": "^2.2.5",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.0.17",
-    "react-validate-form": "^1.0.6"
+    "react-validate-form": "^1.0.6",
+    "socket.io-client": "^2.0.4"
   },
   "devDependencies": {
-    "@storybook/addon-actions": "^3.2.17",
-    "@storybook/addon-links": "^3.2.17",
-    "@storybook/react": "^3.2.17",
     "enzyme": "^3.2.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "expect": "^22.0.3",

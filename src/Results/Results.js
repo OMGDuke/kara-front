@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 
 import Result from '../Result/Result';
+import Search from '../Search/Search';
 
 class Results extends Component {
   constructor(props) {
@@ -10,6 +11,13 @@ class Results extends Component {
       results: []
     }
     this.getResults();
+  }
+
+  componentWillReceiveProps(newProps) {
+    if(newProps.match.params.searchTerm !== this.props.match.params.searchTerm) {
+      this.props.match.params.searchTerm = newProps.match.params.searchTerm;
+      this.getResults();
+    }
   }
 
   getResults() {
@@ -22,15 +30,27 @@ class Results extends Component {
       });
   }
 
+  renderResults() {
+    const searchTerm = this.props.match.params.searchTerm;
+    if(!searchTerm) {
+      return;
+    } else {
+      return(
+        <div>
+          <h1>Results</h1>
+          <div className="row">
+            {this.state.results.map(result => <Result key={result.id.videoId} resultData={result} addToQueue={this.props.addToQueue}/>)}
+          </div>
+        </div>
+      )
+    }
+  }
+
   render() {
     return (
       <div className="Results container">
-        <h1>Results</h1>
-        <div className="row">
-          {
-            this.state.results.map(result => <Result key={result.id.videoId} resultData={result} />)
-          }
-        </div>
+        <Search {...this.props}/>
+        {this.renderResults()}
       </div>
     );  
   }
