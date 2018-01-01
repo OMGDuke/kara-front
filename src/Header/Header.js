@@ -32,7 +32,8 @@ class Header extends Component {
       return(
         <div>
           <h2>Queue: {this.props.queue.length} Songs</h2>
-          {this.props.queue.slice(0,3).map(song => <p key={this.generateKey()}>{song.snippet.title}</p>)}
+          <h3>Up Next:</h3>
+          {this.props.queue.slice(0,1).map(song => <p key={this.generateKey()}>{song.snippet.title}</p>)}
           <button onClick={this.goToQueue}><h5>Full Queue</h5></button>
           <button className="float-right" onClick={this.props.nextSong}>Skip Song</button>
         </div>

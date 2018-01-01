@@ -21,7 +21,7 @@ class Sing extends Component {
 
     render() {
         return (
-        <div className="Sing container">
+        <div className="Sing">
             {this.showSong()}
         </div>
         );  
