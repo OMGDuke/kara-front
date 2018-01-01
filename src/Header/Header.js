@@ -13,8 +13,6 @@ class Header extends Component {
   showRoom() {
     if(this.props.queue) {
       return <h3>Room: {this.props.room}</h3>
-    } else {
-      return <h3>Join a room first</h3>
     }
   }
 
@@ -33,15 +31,11 @@ class Header extends Component {
     if(this.props.queue) {
       return(
         <div>
-          <button className="float-right" onClick={this.props.nextSong}>Skip Song</button>
           <h2>Queue: {this.props.queue.length} Songs</h2>
           {this.props.queue.slice(0,3).map(song => <p key={this.generateKey()}>{song.snippet.title}</p>)}
           <button onClick={this.goToQueue}><h5>Full Queue</h5></button>
+          <button className="float-right" onClick={this.props.nextSong}>Skip Song</button>
         </div>
-      )
-    } else {
-      return (
-        <h2>Add songs to the queue</h2>
       )
     }
   }
@@ -51,14 +45,14 @@ class Header extends Component {
         <div className="jumbotron jumbotron-fluid">
             <div className="container">
               <div className="row">
-                <div className="col-md-4">
-                  {this.showRoom()}
-                </div>
-                <div className="col-md-4">
+                <div className="col-md-4 order-md-2">
                   <a href="#" onClick={this.goHome}><h1 className="display-4">{process.env.REACT_APP_WEBSITE_NAME}</h1></a>
                   <p className="lead">Witty Tagline</p>
                 </div>
-                <div className="col-md-4">
+                <div className="col-md-4 order-md-1">
+                {this.showRoom()}
+              </div>
+                <div className="col-md-4 order-md-3">
                   {this.showQueue()}
                 </div>
               </div>
