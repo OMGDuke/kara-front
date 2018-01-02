@@ -9,7 +9,7 @@ import Sing from './Sing/Sing';
 import Queue from './Queue/Queue';
 import NotFound from './NotFound/NotFound';
 
-const socket = openSocket('192.168.1.2:3030');
+const socket = openSocket('localhost:3030');
 
 class App extends Component {
     constructor() {
