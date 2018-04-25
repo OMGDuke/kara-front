@@ -7,7 +7,6 @@ class Sing extends Component {
     this.onVideoEnd = this.onVideoEnd.bind(this);
   }
   onVideoEnd() {
-    console.log(this.props);
     this.props.nextSong();
   }
   showSong() {
