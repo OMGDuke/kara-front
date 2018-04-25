@@ -18,6 +18,7 @@
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.0.17",
     "react-validate-form": "^1.0.6",
+    "react-youtube": "^7.6.0",
     "socket.io-client": "^2.0.4"
   },
   "devDependencies": {
